@@ -41,4 +41,12 @@ export class NumberComponent extends AbstractInputComponent<number> {
         this.onChange(this.value)
       })
   }
+
+  startPrint(){
+    if (!this.value){
+      return
+    }
+
+    window.open('paperlessasn://'+this.value)
+  }
 }

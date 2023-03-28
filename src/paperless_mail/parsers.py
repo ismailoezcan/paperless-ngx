@@ -165,9 +165,8 @@ class MailDocumentParser(DocumentParser):
         pdf_path = os.path.join(self.tempdir, "merged.pdf")
         mail = self.get_parsed(document_path)
 
-        pdf_collection.append(("1_mail.pdf", self.generate_pdf_from_mail(mail)))
-
         if mail.html == "":
+            pdf_collection.append(("1_mail.pdf", self.generate_pdf_from_mail(mail)))
             with open(pdf_path, "wb") as file:
                 file.write(pdf_collection[0][1])
                 file.close()
